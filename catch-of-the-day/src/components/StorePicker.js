@@ -2,18 +2,17 @@ import React from 'react';
 import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
-    
-
     myInput = React.createRef();
 
 
     goToStore = event => {
-      //1
+      // 1. stop the form from submitting
       event.preventDefault();
-      //2
-      console.log(this);
+      // 2. get the text from that input
+      const storeName = this.myInput.value.value;
 
-      //3
+      //3. Change the page to /store/whatever-they-entered
+      this.props.history.push(`/store/${storeName}`);
     };
 
 
@@ -29,17 +28,19 @@ class StorePicker extends React.Component {
                 required 
                 placeholder="Store Name" 
                 defaultValue ={getFunName()} 
-                />
+              />
               <button type="submit">Visit Store →</button>
         
             </form>
         );
     };
   };
-
+// Events, Refs and this Binding
 //   constructor() {
 //     super();
 //     this.goToStore
-    //I am not kidding. This is a little bit of a bummer
+    //I am not kidding. 
+    //This is a little bit of a bummer
 
-  export default StorePicker;
+export default StorePicker;
+  
