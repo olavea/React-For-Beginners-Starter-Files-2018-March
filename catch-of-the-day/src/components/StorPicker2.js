@@ -2,17 +2,20 @@ import React from 'react';
 import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
+    handleClick() {
+      alert("hei!");
+    }
+
     myInput = React.createRef();
 
 
     goToStore = event => {
-      // 1. stop the form from submitting
+      //1
       event.preventDefault();
-      // 2. get the text from that input
-      const storeName = this.myInput.value.value;
+      //2
+      console.log(this);
 
-      //3. Change the page to /store/whatever-they-entered
-      this.props.history.push(`/store/${storeName}`);
+      //3
     };
 
 
@@ -22,6 +25,7 @@ class StorePicker extends React.Component {
         return (
             <form className="store-selector" onSubmit={this.goToStore}>
               <h2>Please Enter A Store</h2>
+              <button onClick={this.handleClick}>CLick me!</button>
               <input 
                 type="text" 
                 ref={this.myInput}
