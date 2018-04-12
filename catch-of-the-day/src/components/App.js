@@ -1,9 +1,3 @@
-import React from "react";
-import Header from './Header';
-import Order from './Order';
-import Inventory from './Inventory';
-
-
 class App extends React.Component {
     state = {          // object,
         fishes: {}, //empty object, could use string and... or...//empty state of fishes
@@ -21,9 +15,6 @@ class App extends React.Component {
 // we want to run it in add fish form
 // How does anything get into an component props and inventory
       // this.setState
-
-
-    };
       //1 take a copy of the existing state, non-mutation, non-deep-clone
       const fishes = { ...this.state.fishes};
 
@@ -34,12 +25,14 @@ class App extends React.Component {
       //3 set the neew fishes object to state
 
       this.setState({
-          fishes: fishes
+        fishes: fishes
       });
-    };
 
-        //pleaseUpdateThisPieceOfState
-      console.log
+      this.setState({
+
+      });
+    }
+
     render() {
       return (
           <div className="catch-og-the-day">
@@ -53,5 +46,9 @@ class App extends React.Component {
   }
 }
 
-export default App;
 
+
+
+
+
+export default App;
